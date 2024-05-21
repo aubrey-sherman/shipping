@@ -20,7 +20,7 @@ router.post("/:orderId/ship", async function (req, res) {
 
   const orderId = Number(req.params.orderId);
 
-  console.log("req.body:", req.body);
+  //console.log("req.body:", req.body);
   const result = jsonschema.validate(
     req.body, orderSchema, { required: true }
   );
