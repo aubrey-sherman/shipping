@@ -1,6 +1,8 @@
 import { Router } from "express";
 import jsonschema from "jsonschema";
 import { BadRequestError } from "../expressError.js";
+import orderSchema from "../schemas/orderSchema.json" with {type: "json"};
+
 import { shipViaShipIt } from "../shipItApi.js";
 import { getCost } from "../costs.js";
 
