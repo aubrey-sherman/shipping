@@ -3,7 +3,7 @@ import { getCost } from "./costs.js";
 import * as discounts from "./discounts.js";
 
 beforeAll(function () {
-  vi.spyOn(discounts, "getRandomDiscount"); // either getCost or costs...
+  vi.spyOn(discounts, "getRandomDiscount");
 });
 
 afterAll(function () {
