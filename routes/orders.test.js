@@ -19,6 +19,16 @@ describe("POST /orders/:id/ship", function () {
     });
   });
 
+  test("invalid", async function () {
+    const resp = await request(app).post("/orders/123/ship").send({
+      productId: "tree",
+      name: 53,
+      addr: ["mint", "chip"],
+      zip: 12345
+    });
+    expect(resp.statusCode).toEqual(400);
+  });
+
   test("throws error if empty request body", async function () {
     const resp = await request(app)
       .post("/orders/123/ship")
@@ -26,3 +36,4 @@ describe("POST /orders/:id/ship", function () {
     expect(resp.statusCode).toEqual(400);
   });
 });
+
